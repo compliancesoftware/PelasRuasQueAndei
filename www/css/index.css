@@ -1,0 +1,19 @@
+html, body, .app, .main{
+    height: 90%;
+}
+.card{
+    text-align: center;
+    border: solid 0.5px;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+}
+.card p{
+    top: 50%;
+}
+.card-container{
+    border: solid  0.5px;
+    height: 100%;
+}
+.elements-container{
+    height: 100%;
+}
