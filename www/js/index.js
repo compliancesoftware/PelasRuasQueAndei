@@ -49,7 +49,6 @@ function isMobile(){
 
 function cardOnClick(event){
     toBeTransfered = "#"+event.currentTarget.id;
-    return false;
 }
 
 function cardContainerOnClick(event){
@@ -80,9 +79,15 @@ $("document").ready(function(){
     //verifica se é executado em ambiente mobile e adiciona suporte a click event
     if(isMobile()){
         console.log("It's a mobile device!");
-        
-        $(".card").click(cardOnClick);
-        $(".card-container").click(cardContainerOnClick);
+        var cards = document.getElementsByClassName("card");
+        for(var i = 0;i < cards.length;i++){
+            cards[i].addEventListener('click',cardOnClick,false);
+        }
+
+        var containers = document.getElementsByClassName("card-container");
+        for(var j = 0;j < containers.length;j++){
+            containers[j].addEventListener('click',cardContainerOnClick,true);
+        }
     }
     else{
         console.log("It's a browser app!");
